@@ -10,17 +10,28 @@
 */
 
 const arrNum = [];
-const arrNumDoppi = [];//test
 
-for(i=0; i<50; i++){
-    const x = Math.floor(Math.random()*100 +1);
 
-    if(x !== arrNum[i]){
-        arrNum.push(x);
-        console.log(x, arrNum[i]);
-    }else{//test
-        arrNumDoppi.push(x);//test
+while(arrNum.length<50){
+
+    const x = Math.floor(Math.random()*50 +1);
+    let same = false;
+
+    for(let i = 0; i<=arrNum.length; i++){
+        if(arrNum[i] == x) {
+            same = true;
+        }
     }
+
+    //si poteva anche usare al posto del for
+    //let same = arrNum.includes(x);
+
+    if(same == false) {
+        arrNum.push(x);  
+    }
+    console.log(same);
 }
+
+
 console.log(arrNum);
-console.log(arrNumDoppi);//test
+
